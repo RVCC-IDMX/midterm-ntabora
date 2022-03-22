@@ -9,28 +9,27 @@ header{
     color: rgb(255,255,255);
     padding: 40px;
     grid-area: header;
+    box-shadow: inset 20px 20px 20px 5px #000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: Georgia;
+    text-shadow: 5px 5px 5px black;
+    background-size: 100%;
+    background-position: center;
 }
 body{
     background-image: linear-gradient(to bottom, #765729, #000000);
     color: white;
     padding: 10px;
     display: grid; /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
-    grid-template-columns: 3fr 1fr;
-    
-    /*
-    grid-template-areas: 
-                        "header header" 
-                         "nav nav"
-                         "main main2" 
-                         "footer footer";
-                         */
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas: /*for iPhone single column*/
                          "header" 
                           "nav"
                           "main"
                           "main2" 
                           "footer";
+    word-break: break-all;
 
 }
 
@@ -45,6 +44,15 @@ body{
     nav li {
         display: inline-block; /*https://stackoverflow.com/questions/37960543/placing-links-on-one-line-in-html*/
         padding: 10px;
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #765729;
+        text-decoration: underline;
     }
 
     main{ 
@@ -114,8 +122,48 @@ body{
             }
 
 footer {
-    padding-top: 10px;
+    padding: 10px;
+    text-align: center;
     background-color: lightgray;
-    border: 3px #886644;
+    border: 3px solid #886644;
     grid-area: footer;
+    box-shadow: inset 3px 3px 3px 5px #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+@media (min-width: 960px) and (max-width: 1200px) {
+    body{
+    /*for desktop*/
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-template-areas: 
+                        "header header" 
+                         "nav nav"
+                         "main main2" 
+                         "footer footer";
+    }
+@media (min-width:1200px) {
+    body{
+        display: grid;
+        grid-template-columns: 3fr;
+        grid-template-areas: 
+                            "header header" 
+                            "nav nav"
+                            "main main2" 
+                            "footer footer";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) /*for iPad/tablet*/ {
+    body{
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-template-areas: 
+        "header" 
+         "nav"
+         "main main2" 
+         "footer";
+        }
+    }
 }
