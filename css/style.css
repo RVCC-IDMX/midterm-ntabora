@@ -29,7 +29,6 @@ body{
                           "main"
                           "main2" 
                           "footer";
-    word-break: break-all;
 
 }
 
@@ -44,8 +43,14 @@ body{
     nav li {
         display: inline-block; /*https://stackoverflow.com/questions/37960543/placing-links-on-one-line-in-html*/
         padding: 10px;
+        margin-left: 0;
+        border-left: 3px double black;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
-
+    nav li:first-child{
+        border: none;
+    }
     a{
         color: black;
         text-decoration: none;
@@ -63,6 +68,10 @@ body{
         box-shadow: inset 3px 3px 10px 5px #000;
         grid-area: main;
     }
+
+            main p:first-of-type::first-line{
+                font-size: 130%;
+            }
 
             main h2{ 
                 padding: 20px;
@@ -112,12 +121,15 @@ body{
             .submission {
                     border: 3px solid;
                     padding: 10px;
+                    margin: 10px;
+                    background-color: rgba(255,255,255,.4);
                 }
             .opinion{
                 padding: 10px;
+                margin: 10px
             }
             .signature{
-                text-align: center;
+                text-align: right;
                 font-style: italic;
             }
 
@@ -155,7 +167,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) and (max-width: 960px) /*for iPad/tablet*/ {
+@media (min-width: 768px) and (max-width: 960px) /* for iPad/tablet */ {
     body{
         display: grid;
         grid-template-columns: 2fr;
