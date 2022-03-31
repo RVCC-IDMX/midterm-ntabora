@@ -1,0 +1,181 @@
+/*Journey to the Center of the Earth Practicum*/
+/*Nathaniel Tabora*/
+
+header{
+    display: grid;
+    background-image: url(/img/cave.jpg); /* https://smallbusiness.chron.com/add-image-css-file-51301.html*/
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+    color: rgb(255,255,255);
+    padding: 40px;
+    grid-area: header;
+    box-shadow: inset 20px 20px 20px 5px #000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: Georgia;
+    text-shadow: 5px 5px 5px black;
+    background-size: 100%;
+    background-position: center;
+}
+body{
+    background-image: linear-gradient(to bottom, #765729, #000000);
+    color: white;
+    padding: 10px;
+    display: grid; /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+    grid-template-columns: 1fr;
+    grid-template-areas: /*for iPhone single column*/
+                         "header" 
+                          "nav"
+                          "main"
+                          "main2" 
+                          "footer";
+
+}
+
+    nav {
+        border: 3px solid #886644;
+        text-align: center;
+        box-shadow: inset 3px 3px 10px 5px #000; /*https://css-tricks.com/snippets/css/css-box-shadow/ for inset graphic command*/
+        background-color: lightgrey;
+        grid-area: nav;
+    }
+
+    nav li {
+        display: inline-block; /*https://stackoverflow.com/questions/37960543/placing-links-on-one-line-in-html*/
+        padding: 10px;
+        margin-left: 0;
+        border-left: 3px double black;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    nav li:first-child{
+        border: none;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #765729;
+        text-decoration: underline;
+    }
+
+    main{ 
+        background-color: lightgray;
+        color: #000;
+        border: 3px solid;
+        padding: 20px;
+        box-shadow: inset 3px 3px 10px 5px #000;
+        grid-area: main;
+    }
+
+            main p:first-of-type::first-line{
+                font-size: 130%;
+            }
+
+            main h2{ 
+                padding: 20px;
+                border-bottom: dotted;
+            }
+
+            .character{
+                font-weight: bold;
+            }
+            
+            [lang=fr]{
+                font-style: italic;
+            }
+            [lang=it]{
+                font-style: italic;
+            }
+            [lang=is]{
+                font-style: italic;
+
+            }
+            #cover{
+                float: left;
+                padding: 20px;
+                height: 300px;
+            }
+
+            #cryptogram{
+                text-align: center;
+            }
+
+            #cryptogram figcaption{
+                font-style: italic;
+            }
+
+    aside{
+        background-color: lightgray;
+        color: #000;
+        padding: 10px;
+        box-shadow: inset 3px 3px 10px 5px #000;
+        grid-area: main2;
+
+    }
+            aside h2{
+                border-bottom: dotted; 
+                }
+
+            .submission {
+                    border: 3px solid;
+                    padding: 10px;
+                    margin: 10px;
+                    background-color: rgba(255,255,255,.4);
+                }
+            .opinion{
+                padding: 10px;
+                margin: 10px
+            }
+            .signature{
+                text-align: right;
+                font-style: italic;
+            }
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: lightgray;
+    border: 3px solid #886644;
+    grid-area: footer;
+    box-shadow: inset 3px 3px 3px 5px #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+@media (min-width: 960px) and (max-width: 1200px) {
+    body{
+    /*for desktop*/
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-template-areas: 
+                        "header header" 
+                         "nav nav"
+                         "main main2" 
+                         "footer footer";
+    }
+@media (min-width:1200px) {
+    body{
+        display: grid;
+        grid-template-columns: 3fr;
+        grid-template-areas: 
+                            "header header" 
+                            "nav nav"
+                            "main main2" 
+                            "footer footer";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) /* for iPad/tablet */ {
+    body{
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-template-areas: 
+        "header" 
+         "nav"
+         "main main2" 
+         "footer";
+        }
+    }
+}
